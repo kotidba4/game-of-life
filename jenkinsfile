@@ -1,0 +1,6 @@
+node ('GOL'){
+    stage ('SCM'){
+      git  'https://github.com/kotidba4/game-of-life.git'
+    }
+
+}
