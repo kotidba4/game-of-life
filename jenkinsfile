@@ -2,5 +2,12 @@ node ('GOL,'){
     stage ('SCM'){
       git  'https://github.com/kotidba4/game-of-life.git'
     }
+      stage ('build'){
+          sh 'mvn clean package'
+      }
+      stage('postbuild'){
+          junit '**/TEST-*.xml'
+          archive  '**/*.war'
+     }
 
 }
