@@ -1,13 +1,21 @@
-node ('GOL,'){
-    stage ('SCM'){
-      git  'https://github.com/kotidba4/game-of-life.git'
-    }
-      stage ('build'){
-          sh 'mvn clean package'
-      }
-      stage('postbuild'){
-          junit '**/TEST-*.xml'
-          archive  '**/*.war'
-     }
-
+pipline{
+agent {label 'GOL,'}
+stages {
+stgae('SCM'){
+steps {
+git branch: 'master' url:'https://github.com/kotidba4/game-of-life.git'
+  }
+}
+satge('build'){
+steps {
+sh 'mvn package'
+ }
+}
+}
+post {
+success {
+artifacts '**/*.war'
+junit     '**/TEST-*.xml'
+}
+}
 }
