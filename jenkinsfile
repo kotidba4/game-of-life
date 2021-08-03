@@ -1,4 +1,4 @@
-pipline{
+pipeline{
 agent {label 'GOL,'}
 stages {
 stgae('scm'){
