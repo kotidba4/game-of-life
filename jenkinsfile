@@ -5,7 +5,7 @@ pipeline {
         pollSCM('* * * * *')
     }
     parameters{
-        string (name:'BRANCH',defaultValue: 'master', description: 'brnach to build')
+        string (name:'BRANCH',defaultValue: 'master', description: 'Brnach to build')
     }
     environment {
         CI_ENV='DEV'
