@@ -1,7 +1,7 @@
 pipline{
 agent {label 'GOL,'}
 stages {
-stgae('SCM'){
+stgae('scm'){
 steps {
 git branch: 'master' url:'https://github.com/kotidba4/game-of-life.git'
   }
