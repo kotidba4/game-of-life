@@ -3,7 +3,7 @@ agent {label 'GOL,'}
 stages {
 stgae('scm'){
 steps {
-git branch: 'master' url:'https://github.com/kotidba4/game-of-life.git'
+git branch: 'master', url:'https://github.com/kotidba4/game-of-life.git'
   }
 }
 satge('build'){
