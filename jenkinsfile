@@ -9,6 +9,10 @@ pipeline {
             steps {
 
                 git branch: "${params.BRANCH}", url: 'https://github.com/kotidba4/game-of-life.git'
+<<<<<<< HEAD
+=======
+                //input message: 'Continue to next stage? ', submitter: 'qtaws,qtazure'
+>>>>>>> 88074fc4dec2eb1ba7f1bef231ef32a874d140a2
             }
         }
         stage('build') {
