@@ -14,8 +14,8 @@ sh 'mvn package'
 }
 post {
 success {
-artifacts '**/*.war'
-junit     '**/TEST-*.xml'
+   artifacts '**/*.war'
+    junit '**/TEST-*.xml'
 }
 }
 }
