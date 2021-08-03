@@ -4,16 +4,28 @@ pipeline {
         cron('H * * * *')
         pollSCM('* * * * *')
     }
+    parameters{
+        string (name:'BRANCH',defaultValue: 'master', description: 'brnach to build')
+    }
+    environment {
+        CI_ENV='DEV'
+    }
     stages {
         stage('scm') {
+            environmnet {
+                DUMMY='FUN'
+            }
             steps {
 
                 git branch: "${params.BRANCH}", url: 'https://github.com/kotidba4/game-of-life.git'
+                //input message: 'continue to next stagae? ',submittier: 'qtaws,qtazure'
+                echo env.CI_ENV
+                echo env.DUMMY 
             }
         }
         stage('build') {
             steps {
-                sh 'mvn package'
+                sh 'mvn package'  
             }
         }
     }
